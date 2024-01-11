@@ -1,0 +1,481 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 Video Play Button
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.play-btn {
+  position: absolute;
+  top: calc(50% - 4rem);
+  left: calc(50% - 4rem);
+  z-index: 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(183, 18, 37, 0.831372549);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  height: 8rem;
+  width: 8rem;
+}
+.play-btn svg {
+  height: 2rem;
+  width: 2rem;
+  fill: white;
+}
+
+.vid-banner {
+  position: relative;
+  cursor: pointer;
+}
+.vid-banner:hover .play-btn {
+  transform: scale(1.3);
+}
+.vid-banner:hover .play-btn svg {
+  fill: white !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Buttons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.btn {
+  cursor: pointer;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important;
+}
+.btn:focus {
+  outline: 0px;
+}
+
+.btn-square {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 60px;
+  padding: 0 35px;
+  font-size: 8px;
+  line-height: 60px;
+  letter-spacing: 0.6em;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+}
+.btn-square:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  opacity: 0.25;
+  transition: opacity 0.8s 0.2s;
+}
+.btn-square:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  transform: translateY(100%);
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.2s;
+  backface-visibility: hidden;
+}
+.btn-square:hover:after {
+  transform: translateY(0);
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.btn-square:hover span:first-child {
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.btn-square:hover span:nth-child(2) {
+  transform: translateY(0);
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
+}
+.btn-square span {
+  display: inline-block;
+  backface-visibility: hidden;
+}
+.btn-square span:first-child {
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+}
+.btn-square span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  z-index: 2;
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.btn-circle {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 2rem;
+}
+.btn-circle > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-wave {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 7px 0;
+}
+.btn-wave:before {
+  content: "";
+}
+.btn-wave:after, .btn-wave:before {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+.btn-wave svg {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  pointer-events: none;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  transition: transform 0.7s;
+  transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+.btn-wave:hover svg {
+  transform: translate3d(-66.6%, 0, 0);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        CodeDrop BTN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.btn-1 {
+  position: relative;
+  border: none;
+  display: inline-block;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important;
+}
+.btn-1:before, .btn-1:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-circle-1 {
+  background: none;
+  padding: 0;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  width: 120px;
+  height: 120px;
+  color: white;
+}
+.btn-circle-1 .progress {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.btn-circle-1 .progress__circle,
+.btn-circle-1 .progress__path {
+  fill: none;
+  stroke: #333;
+  stroke-width: 1px;
+}
+.btn-circle-1 .progress__path {
+  stroke: #fff;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.btn-circle-1:hover .progress__path {
+  stroke-dashoffset: 0;
+}
+.btn-circle-1:hover .progress {
+  transform: scale3d(1.1, 1.1, 1);
+}
+.btn-circle-1:focus-visible .progress__circle {
+  fill: rgba(252, 196, 63, 0.4);
+}
+
+.btn-circle-2 {
+  overflow: hidden;
+  border-radius: 50%;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  font-weight: 500;
+}
+.btn-circle-2:before {
+  content: "";
+  background: #000;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+}
+.btn-circle-2 span {
+  display: block;
+  position: relative;
+}
+.btn-circle-2 > span {
+  overflow: hidden;
+  mix-blend-mode: difference;
+}
+.btn-circle-2:hover > span > span {
+  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+}
+.btn-circle-2:hover::before {
+  transform: translate3d(0, 100%, 0);
+}
+
+.btn-text-circle {
+  padding: 0;
+  background: none;
+  -webkit-clip-path: circle(40% at 50% 50%);
+  clip-path: circle(40% at 50% 50%);
+}
+.btn-text-circle:focus-visible {
+  background: #443ffc;
+}
+.btn-text-circle .textcircle {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+.btn-text-circle .textcircle text {
+  font-size: 32px;
+  text-transform: uppercase;
+  fill: #000;
+}
+.btn-text-circle .textcircle textPath {
+  letter-spacing: 17px;
+  /* Firefox needs this */
+}
+.btn-text-circle:hover .textcircle {
+  animation: rotateIt 7s linear infinite;
+}
+.btn-text-circle .eye {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes MoveUpInitial {
+  to {
+    transform: translate3d(0, -105%, 0);
+  }
+}
+@keyframes MoveUpEnd {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes rotateIt {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      Artist BTN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.btn-artist {
+  position: relative;
+  display: inline-flex;
+  height: 90px;
+  width: auto;
+  align-items: center;
+}
+.btn-artist:hover .button-circle {
+  transform: scale3d(1.1, 1.1, 1);
+}
+.btn-artist:hover .button-circle svg .path {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}
+.btn-artist:hover .button-arrow {
+  opacity: 1;
+  right: -8px;
+}
+.btn-artist .button-text {
+  color: #fff;
+  background-color: #000;
+  padding: 10px 20px 10px 0;
+  z-index: 100;
+}
+.btn-artist .button-arrow {
+  position: absolute;
+  right: 0px;
+  z-index: 100;
+  opacity: 0;
+  transition: all 800ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+.btn-artist .button-circle {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  transition: transform 500ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+.btn-artist .button-circle svg {
+  transform: rotate(160deg);
+}
+.btn-artist .button-circle svg .path {
+  stroke-width: 1;
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Btn Square 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.btn-square-1 {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: border-color 1s ease;
+}
+.btn-square-1 .text {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  line-height: 13px;
+  transform: translateX(16px);
+  transition: transform 0.4s ease;
+}
+.btn-square-1 .icon {
+  display: inline-block;
+  width: 12px;
+  height: 1px;
+  background-color: white;
+  margin-left: 18px;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.btn-square-1 .icon::before, .btn-square-1 .icon::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  transition: transform 0.4s ease;
+}
+.btn-square-1 .icon::before {
+  transform-origin: top right;
+  transform: rotate(40deg) scaleX(0);
+}
+.btn-square-1 .icon::after {
+  transform-origin: bottom right;
+  transform: rotate(-40deg) scaleX(0);
+}
+.btn-square-1:hover {
+  border-color: white;
+}
+.btn-square-1:hover .text {
+  transform: none;
+}
+.btn-square-1:hover .icon {
+  transform: scaleX(1);
+}
+.btn-square-1:hover .icon::before {
+  transform: rotate(40deg) scaleX(1);
+}
+.btn-square-1:hover .icon::after {
+  transform: rotate(-40deg) scaleX(1);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Btn Square 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.btn-square-2 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #000;
+  transition: border 0.5s ease;
+  color: #000;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+}
+.btn-square-2 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+.btn-square-2 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  transform: translateY(225%);
+  height: 14px;
+  line-height: 13px;
+}
+.btn-square-2:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+.btn-square-2:hover {
+  border: 0;
+  transition: border 0.5s ease;
+}
+.btn-square-2:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+.btn-square-2:hover span:last-child {
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}/*# sourceMappingURL=btn.css.map */

@@ -1,0 +1,58 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      Line Hover            
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.linehover-1 {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+.linehover-1::after, .linehover-1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+}
+.linehover-1::after {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.linehover-1::before {
+  background-color: #fff;
+  transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(-101%);
+}
+.linehover-1:hover::before {
+  transform: translateX(0%);
+  transition: transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: left center;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      Line Hover            
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.linehover {
+  position: relative;
+  outline: 0;
+  cursor: pointer;
+  padding-bottom: 0.25rem;
+}
+.linehover::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  transform-origin: right center;
+  transform: scale(0, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.linehover:hover::before {
+  transform-origin: left center;
+  transform: scale(1, 1);
+}/*# sourceMappingURL=text-hover.css.map */
